@@ -37,5 +37,29 @@ module.exports.validatSubscriberInput = (data) => {
     }
 }
 
+module.exports.validatMailInput = (data) => {
+    let errors = {};
+
+    data.email = !isEmpty(data.email) && data.email !== undefined ? data.email : '';
+    data.name = !isEmpty(data.name) && data.name !== undefined ? data.name : '';
+    data.msg = !isEmpty(data.msg) && data.msg !== undefined ? data.msg : '';
+    if (Validator.isEmpty(data.name)) {
+        errors.name = 'Kindly Enter your Name';
+    }
+    if (Validator.isEmpty(data.email)) {
+        errors.email = 'Kindly Enter an email address';
+    }
+    if (!emailIsValid(data.email)) {
+        errors.email = 'Kindly Enter a valid  email address';
+    }
+    if (Validator.isEmpty(data.msg)) {
+        errors.msg = 'Kindly Enter The message';
+    }
+    return {
+        errors,
+        isValid: isEmpty(errors)
+    }
+}
+
 
 

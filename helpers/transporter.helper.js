@@ -17,8 +17,10 @@ const handlebarOptions = {
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'bradcoupers@gmail.com',
-        pass: 'zwmb fjoj pnrq vohs'// naturally, replace both with your real credentials or an application-specific password
+        user: 'mailboxin809@gmail.com',
+        pass: 'krgo cgpi lyxt epuq'
+        // user: 'bradcoupers@gmail.com',
+        // pass: 'zwmb fjoj pnrq vohs'// naturally, replace both with your real credentials or an application-specific password
     }
 });
 
